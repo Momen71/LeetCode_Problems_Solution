@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int n=height.size(),maxarea=0,index=1,endpoint=height.size(),result;
+        while(index<endpoint)
+        {
+                if(height[index-1]<=height[endpoint-1])
+                {
+                    maxarea=(endpoint-index)*height[index-1];
+                    index++;
+                }
+                else
+                {
+                    maxarea=(endpoint-index)*height[endpoint-1];
+                    endpoint--;
+                }
+                if(result<maxarea)
+                result=maxarea;
+        }
+        return result; 
+    }
+};

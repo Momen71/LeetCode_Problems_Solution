@@ -1,0 +1,27 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) 
+    {
+        vector<int>outnum;
+        int flag=0,k=0,l=1;
+        int len=nums.size();
+        for(int i=0;i<=len-2;i++)
+        {
+            for( int j=i+1 ;j<=len-1;j++)
+            {
+                if((nums[i]+nums[j])==target)
+                {
+                    flag=1;
+                    l=j;
+                    break;
+                }
+            }
+            k=i;
+            if(flag==1)
+            break;
+        }
+        outnum.push_back(k);
+        outnum.push_back(l);
+        return outnum;
+    }
+};
